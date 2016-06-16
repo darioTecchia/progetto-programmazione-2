@@ -59,7 +59,9 @@ public class UserTest {
 	@Test
 	public void testClonedObjectShouldBeEqualsToTheOriginalObject() {
 		User adminClone = (User) admin.clone();
+		User adminCopy = new User("Admin", "admin");
 		assertTrue(admin.equals(adminClone));
+		assertTrue(admin.equals(adminCopy));
 	}
 
 }
