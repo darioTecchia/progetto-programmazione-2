@@ -5,6 +5,7 @@ import java.awt.GridLayout;
 import javax.swing.JCheckBox;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.border.TitledBorder;
 
 import stadium.structure.Structure;
 
@@ -53,6 +54,7 @@ public class AdminUserKindPoliciesPanel extends JPanel {
 		private void initialize() {
 
 			this.setLayout(new GridLayout(1, 3));
+			this.setBorder(new TitledBorder(this.salePolicy.getKind().toString()));
 			
 			this.policyName = new JLabel(this.salePolicy.getKind().toString());
 			this.add(this.policyName);

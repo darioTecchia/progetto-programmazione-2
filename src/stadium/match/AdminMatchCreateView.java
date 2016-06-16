@@ -356,7 +356,7 @@ public class AdminMatchCreateView extends JFrame {
 				structure.getStadiumByName((String) this.stadiumCombo.getSelectedItem()));
 		this.structure.getStadiumByName((String) this.stadiumCombo.getSelectedItem()).getMatches().add(match);
 		this.matchesTableModel.addRow(new String[] {
-				match.getDate().toString("dd MMMM yyyy HH:mm"), 
+				match.getDate().toString("EEEE dd MMMM yyyy HH:mm"), 
 				match.getTeam_1().getName() + " vs " + match.getTeam_2().getName(), 
 				match.getStadium().getName(), String.valueOf(match.getStadium().getCapiency()),
 				String.valueOf(match.getID())

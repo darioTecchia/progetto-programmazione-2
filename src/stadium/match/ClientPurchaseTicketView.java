@@ -218,6 +218,7 @@ public class ClientPurchaseTicketView extends JFrame {
 		this.selectedSeat.getStatuses().put(this.match.getDate(), SeatEnum.NOT_AVAIABLE);
 		this.structure.getCurrentUser().getPurchasedTickets().add(new Ticket(this.match, this.selectedSeat));
 		this.selectedSeatButton.setBackground(new Color(207, 0, 15));
+		this.match.getStadium().setTaking(this.match.getStadium().getTaking() + this.possiblePrices.get(0));
 		try {
 			this.structure.save();
 		} catch (IOException e) {
@@ -225,7 +226,6 @@ public class ClientPurchaseTicketView extends JFrame {
 		}
 		this.selectedSeatButton.setEnabled(false);
 		this.purchaseButton.setEnabled(false);
-		this.match.getStadium().setTaking(this.match.getStadium().getTaking() + this.possiblePrices.get(0));
 
 	}
 

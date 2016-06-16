@@ -8,6 +8,7 @@ import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
+import javax.swing.border.TitledBorder;
 
 import org.joda.time.DateTime;
 
@@ -76,6 +77,7 @@ public class ClientPrenotationsPanel extends JPanel {
 		 */
 		private void initialize() {
 			this.setLayout(new BorderLayout());
+			this.setBorder(new TitledBorder(this.ticket.getTeams()));
 
 			this.matchInfoPanel = new JPanel(new GridLayout(4, 1));
 			this.teamsLabel = new JLabel(this.ticket.getMatch().getTeam_1().getName() + " vs " + this.ticket.getMatch().getTeam_2().getName());
@@ -110,7 +112,6 @@ public class ClientPrenotationsPanel extends JPanel {
 			}
 			else {
 				this.ticketsPanel.add(new TicketComponent(ticket, this.structure));
-				this.ticketsPanel.add(new JLabel(""));				
 			}
 		}
 		this.user.getPreOrderedTickets().removeAll(ticketToDelete);

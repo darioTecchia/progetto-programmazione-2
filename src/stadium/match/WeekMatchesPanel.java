@@ -8,6 +8,7 @@ import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
+import javax.swing.border.TitledBorder;
 
 import stadium.structure.Structure;
 
@@ -68,6 +69,7 @@ public class WeekMatchesPanel extends JPanel {
 		 */
 		private void initialize() {
 			this.setLayout(new BorderLayout());
+			this.setBorder(new TitledBorder(this.match.getTeam_1().getName() + " vs " + this.match.getTeam_2().getName()));
 
 			this.matchInfoPanel = new JPanel(new GridLayout(3, 1));
 			this.teamsLabel = new JLabel(this.match.getTeam_1().getName() + " vs " + this.match.getTeam_2().getName());
@@ -93,7 +95,6 @@ public class WeekMatchesPanel extends JPanel {
 
 		for(Match ticket: this.matches) {
 			this.matchesPanel.add(new MatchComponent(ticket, this.structure));
-			this.matchesPanel.add(new JLabel(""));				
 		}
 		this.matchesScrollPane = new JScrollPane();
 		this.matchesScrollPane.getViewport().add(this.matchesPanel);
