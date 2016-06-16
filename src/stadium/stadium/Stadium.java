@@ -36,7 +36,7 @@ public class Stadium implements Serializable, Cloneable {
 	 * @throws IllegalArgumentException the structure's name should be not empty or starts with space
 	 */
 	public Stadium(String name, int capiency, double pricePerMatch) {
-		if(!name.matches("[a-zA-Z]{1,}(\\s)*[a-zA-Z]{1,}")) {
+		if(!name.matches("(([a-zA-Z]{1,}(\\W)*(\\s)*[a-zA-Z]{1,})(\\s)*)*")) {
 			throw new IllegalArgumentException("Stadium's name is not valid");
 		}
 		this.name 							= name;
@@ -65,7 +65,7 @@ public class Stadium implements Serializable, Cloneable {
 	 * @param name the new name
 	 */
 	public void setName(String name) {
-		if(!name.matches("[a-zA-Z]{1,}(\\s)*[a-zA-Z]{1,}")) {
+		if(!name.matches("(([a-zA-Z]{1,}(\\W)*(\\s)*[a-zA-Z]{1,})(\\s)*)*")) {
 			throw new IllegalArgumentException("Stadium's name is not valid");
 		}
 		this.name = name;
