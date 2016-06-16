@@ -16,7 +16,7 @@ public class Team implements Serializable, Cloneable {
 	 * @param name the name
 	 */
 	public Team(String name) {
-		if(!name.matches("[a-zA-Z]{1,}(\\s)*[a-zA-Z]{1,}")) {
+		if(!name.matches("(([a-zA-Z]{1,}(\\W)*(\\s)*[a-zA-Z]{1,})(\\s)*)*")) {
 			throw new IllegalArgumentException("Team's name not valid");
 		}
 		this.name = name;
@@ -37,7 +37,7 @@ public class Team implements Serializable, Cloneable {
 	 * @param name the new name
 	 */
 	public void setName(String name) {
-		if(!name.matches("[a-zA-Z]{1,}(\\s)*[a-zA-Z]{1,}")) {
+		if(!name.matches("(([a-zA-Z]{1,}(\\W)*(\\s)*[a-zA-Z]{1,})(\\s)*)*")) {
 			throw new IllegalArgumentException("Team's name not valid");
 		}
 		this.name = name;
